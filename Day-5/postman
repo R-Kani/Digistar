@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "ea53148b-6b5e-4e26-b384-085ebc7430e7",
+		"name": "User Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37946988"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"age\":12,\r\n    \"usename\": \"john.doe@example.com\",\r\n    \"password\": \"Test123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usename\": \"john.doe@example.com\",\r\n    \"password\": \"Test123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDkzYzkzMDVlYWU0ZTUxOTUwYTI3NyIsImlhdCI6MTcyNTUxMjkxOSwiZXhwIjoxNzI1NTE2NTE5fQ.zBiA2mHFibRzIJ35xsnl8MzE3tUXCOx2-AiL8viIOew",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDkzYzkzMDVlYWU0ZTUxOTUwYTI3NyIsImlhdCI6MTcyNTUxMjkxOSwiZXhwIjoxNzI1NTE2NTE5fQ.zBiA2mHFibRzIJ35xsnl8MzE3tUXCOx2-AiL8viIOew",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/66d93c9305eae4e51950a277",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"66d93c9305eae4e51950a277"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDkzYzkzMDVlYWU0ZTUxOTUwYTI3NyIsImlhdCI6MTcyNTUxMjkxOSwiZXhwIjoxNzI1NTE2NTE5fQ.zBiA2mHFibRzIJ35xsnl8MzE3tUXCOx2-AiL8viIOew",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"John Doe\", \"age\": 22}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/66d93c9305eae4e51950a277",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"66d93c9305eae4e51950a277"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDkzYzkzMDVlYWU0ZTUxOTUwYTI3NyIsImlhdCI6MTcyNTUxMjkxOSwiZXhwIjoxNzI1NTE2NTE5fQ.zBiA2mHFibRzIJ35xsnl8MzE3tUXCOx2-AiL8viIOew",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/search?name=John Doe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "John Doe"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDkzYzkzMDVlYWU0ZTUxOTUwYTI3NyIsImlhdCI6MTcyNTUxMjkxOSwiZXhwIjoxNzI1NTE2NTE5fQ.zBiA2mHFibRzIJ35xsnl8MzE3tUXCOx2-AiL8viIOew",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/users/66d93c9305eae4e51950a277",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"66d93c9305eae4e51950a277"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
